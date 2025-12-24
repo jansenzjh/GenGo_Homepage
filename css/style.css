@@ -1,0 +1,301 @@
+:root {
+    --n5-color: #264653;
+    --n4-color: #2a9d8f;
+    --n3-color: #e9c46a;
+    --n2-color: #f4a261;
+    --n1-color: #e76f51;
+    --n0-color: #edafb8;
+
+    --background-color: #121212;
+    --surface-color: #1E1E1E;
+    --text-color: #E0E0E0;
+    --heading-color: #FFFFFF;
+    --secondary-text-color: #B0B0B0;
+    
+    --primary-accent: var(--n4-color); /* Teal */
+    --secondary-accent: var(--n1-color); /* Burnt Orange */
+    
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* General Styles */
+body {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, var(--n3-color), var(--n1-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.section-title-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--n3-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Header */
+header {
+    background-color: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+    background: linear-gradient(90deg, var(--n4-color), var(--n2-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav .nav-link {
+    margin-left: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+nav .nav-link:hover {
+    color: var(--primary-accent);
+}
+
+.app-store-btn {
+    background: linear-gradient(135deg, var(--n4-color), var(--n5-color));
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-left: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.app-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(42, 157, 143, 0.4);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 0 60px;
+    background: radial-gradient(circle at center, #1f2b33 0%, var(--background-color) 70%);
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--secondary-text-color);
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: var(--surface-color);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background: #252525;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--n4-color);
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--n2-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item p {
+    color: var(--secondary-text-color);
+    margin-bottom: 0;
+}
+
+/* Screenshots Section */
+.screenshots {
+    padding: 80px 0;
+}
+
+.screenshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.screenshot-gallery img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-gallery img:hover {
+    transform: scale(1.03);
+    z-index: 10;
+}
+
+/* Footer */
+footer {
+    background: #0d0d0d;
+    color: var(--secondary-text-color);
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+}
+
+footer a {
+    color: var(--text-color);
+    margin: 0 10px;
+    text-decoration: underline;
+}
+
+/* Privacy Policy Page */
+.privacy-policy {
+    padding: 60px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-policy h1 {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.privacy-policy h3 {
+    font-size: 1.6rem;
+    margin-top: 40px;
+    color: var(--n3-color);
+}
+
+.privacy-policy p, .privacy-policy ul {
+    color: var(--secondary-text-color);
+    font-size: 1.1rem;
+}
+
+.privacy-policy li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .screenshot-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .app-store-btn {
+        margin: 15px 0 0;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    
+    .screenshot-gallery {
+        grid-template-columns: 1fr;
+    }
+}
